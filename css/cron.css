@@ -1,0 +1,68 @@
+.selectable .ui-selecting { background: #FECA40; }
+.selectable .ui-selected { background: #F39814; color: white; }
+/*
+#selectable { list-style-type: none; margin: 0; padding: 0; width: 40px;}
+#selectable li { margin: 3px; padding: 0.1em; font-size: 1.4em; height: 18px; text-align:center; }
+*/
+/*
+#selectable { list-style-type: none; margin: 0; padding: 0; width: 40px;}
+*/
+div.daycol{
+ max-width: 200px;
+}
+
+.selectable li { 
+/*display: inline-block;*/
+float: left;
+list-style-type: none; 
+padding-right: 2px; 
+font-size: 1 em; 
+height: 18px; 
+width: 30px;
+text-align:center; }
+
+.selectable li.dow { 
+display: inline-block;
+float: left;
+list-style-type: none; 
+font-size: 1 em; 
+padding-right: 2px; 
+width:30px;
+height: 18px; 
+text-align:center; }
+
+
+#break {
+ clear: left;
+}
+
+#last {
+ clear: both;
+}
+
+.info{
+	font-weight:bold;
+	font-size: 14px;
+}
+
+.label{
+	font-weight:bold;
+	font-size:larger;
+}
+
+td.rightcol{
+	padding-left: 100px;
+}
+
+
+.info {font-weight: bold;}
+
+.crontable td {
+	padding-right: 15px;
+
+}
+
+ol {
+	margin-left: 0px;
+	padding-left: 0px;
+}
