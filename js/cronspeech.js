@@ -97,7 +97,7 @@ function speakMonths(){
 	
 	$txtSpeech = $('#monthsVal');
 	
-	if($txtSpeech.val() == '')
+	if($txtSpeech.val() == '*')
 		return;
 			
 	if($txtSpeech.val() == '*'){
@@ -113,6 +113,10 @@ function speakMonths(){
 function speakDaysOfWeek(){
 	
 	$txtSpeech = $('#dowVal');
+
+	if($txtSpeech.val() == "?"){
+		return;
+	}
 			
 	if($txtSpeech.val() == '*'){
 		speak("every day of the week");
@@ -128,6 +132,9 @@ function speakDaysOfMonth(){
 	
 	$txtSpeech = $('#monthdaysVal');
 	
+	if($txtSpeech.val() == "?"){
+		return;
+	}
 	
 	//check if value  is * and look at days of week, if
 	//days of week does not = *, then skip this ...
@@ -175,7 +182,7 @@ function speakDaysOfMonth(){
 		speak(result);		
 	}
 	
-	if($txtSpeech.val() != '*' && $dowSpeech.val() != '*'){
+	if($txtSpeech.val() != '*' && $dowSpeech.val() != '*' &&  $dowSpeech.val() != '?'){
 		speak("where those days fall ");
 	}
 }

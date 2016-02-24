@@ -14,6 +14,19 @@ function clearCron(target){
 	$(target).children('.ui-selected').removeClass('ui-selected');	
 }
 
+function resetCron(){	
+	var cronFields =['#minutesVal','#hoursVal','#monthsVal'];
+	$('.ui-selected').removeClass('ui-selected');
+
+	$("#monthdaysVal").val("*");
+	$("#dowVal").val("?");	
+
+	cronFields.forEach(function(item){
+  		$(item).val("*");
+	});
+	assembleCron();
+}
+
  
 
 function cronValue($selected,cronLength,incSelectID,targetFieldID, txtObj){
@@ -122,8 +135,10 @@ function cronValue($selected,cronLength,incSelectID,targetFieldID, txtObj){
 }
 
 function assembleCron(){
-	var cronFields =['#minutesVal','#hoursVal','#monthdaysVal','#monthsVal','#dowVal'];
-  var cronTxt = "*";
+
+
+  var cronFields =['#minutesVal','#hoursVal','#monthdaysVal','#monthsVal','#dowVal'];
+  var cronTxt = "0";
   cronFields.forEach(function(item){
   		var cronVal =  $(item).val();
     
@@ -133,6 +148,7 @@ function assembleCron(){
      cronTxt += ' ' + cronVal;
   });
    $('#cron').val(cronTxt);
+   $('#cron').trigger('autogrow');
 }
 
 
@@ -145,6 +161,8 @@ $(function(){
     createIncrementSelect("monthinc" ,'/',1,11);
     createIncrementSelect("dowinc"   ,'/',1,6);
     createIncrementSelect("domoffset",'L-',1,30);
+
+    $('#cron').autoGrowInput({ minWidth: 100, maxWidth: 1000, comfortZone: 20 });
 	
 	$('#minutes').selectable();
 
@@ -169,6 +187,18 @@ $(function(){
 		 var days = {SUN:0,MON:1,TUE:2,WED:3,THU:4,FRI:5,SAT:6};
 		 
 		 console.log($selected.length);
+
+		 if(($selected.length) > 0){
+		 	$("#monthdaysVal").val("?");
+		 	$("#daysofmonth").children('.ui-selected').removeClass('ui-selected');	
+		 }else{
+		 	$("#dowVal").val("?");
+		 	if($("#monthdaysVal").val() == "?"){
+		 		$("#monthdaysVal").val("*");
+		 	}
+		 	assembleCron();
+		 	return;
+		 }
 		 
 		  if( $('#optDOWstd').prop('checked') == true){
 			 cronValue($selected,7,null,'#dowVal',days); 
@@ -192,9 +222,8 @@ $(function(){
 				clearCron('#daysofweek');
 				var $selected = $('#daysofweek').children('.ui-selected');
 				 cronValue($selected,7,'#dowocc','#dowVal',days);
-			}else{
-				
-				 cronValue($selected,7,'#dowocc','#dowVal',days);
+			}else{	
+				 cronValue($selected,7,'#dowocc','#dowVal',days);			 
 			}
 		}
 	
@@ -225,8 +254,18 @@ $(function(){
 
 	$('#daysofmonth').on('selectablestop', function() {
 	    var $selected = $(this).children('.ui-selected');
-		
-		
+		///////////////////////////////
+		 if(($selected.length) > 0){
+		 	$("#dowVal").val("?");
+		 	$("#daysofweek").children('.ui-selected').removeClass('ui-selected');	
+		 }else{
+		 	//days of week is the default ?
+		 	$("#monthdaysVal").val("*");
+		 	$("#dowVal").val("?");
+		 	clearCron('#daysofweek');
+		 	assembleCron();
+		 	return;
+		 }
 		
 		if( $('#optdomstd').prop('checked') == true){
 			 cronValue($selected,31,null,'#monthdaysVal'); 
