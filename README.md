@@ -8,6 +8,7 @@ This repository contains custom extensions that extend the functionality of the 
 <img src="images/threads.png">
 * Session Tracker: Shows currently active sessions. Adaptation to ColdFusion UI of functions created by David Crawford <dcrawford@acteksoft.com> with modifications by  Rob Brooks-Bilson <rbils@amkor.com> and Nathan Dintenfass
 <img src="images/sessions.png">
+
 ### Installation 
 Place the extensionscustom folder in your ColdFusion CFIDE Administrator directory; C:\ColdFusion11\cfusion\wwwroot\CFIDE\administrator\extensionscustom
 
