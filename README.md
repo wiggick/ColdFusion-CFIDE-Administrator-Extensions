@@ -2,7 +2,7 @@
 This repository contains custom extensions that extend the functionality of the ColdFusion CFIDE Administrator.
 
 ### Current Extensions
-* Cron Scheduler: GUI for creating crontime.  If you are using Chrome, you can have the configured cron time spoken to you.  This tool is currently a one way trip.  You select the date/time elements you need and it builds the crontime. 
+* Cron Scheduler: GUI for creating crontime.  Configure your crontime by selecting individual or ranges of date/time items.  Most standard CF sechedule parameters supported, excluding those that are obvious such as non cron time selections.  Publish option is still being worked on.  Submit will add the task and redirect to the scheduled tasks page. 
 <img src="images/cron.png">
 * Thread Tracker: Shows currently running threads with the ability to kill individual threads.  Adaptation to ColdFusion UI of functions created by [Upendra Roul] (http://coldfusion-tip.blogspot.com/2012/02/kill-coldfusion-thread-using-admin-api.html)
 <img src="images/threads.png">
