@@ -13,3 +13,12 @@ Place the extensionscustom folder in your ColdFusion CFIDE Administrator directo
 
 Move the extensionscustom.cfm from the extensionscustom folder to the parent folder.
 (optionally you can customize the custommenu.xml, but that is a different topic)
+
+# Licenses
+|Library|Source|License|
+|---|---|---|
+|jQuery|https://jquery.com/|[MIT License](http://www.opensource.org/licenses/mit-license.php)|
+|jQuery-ui|https://jqueryui.com/|[Mit License](http://www.opensource.org/licenses/mit-license.php)|
+|jQuery.auto-group-input|https://github.com/Pixabay/jQuery-autoGrowInput|[MIT License](http://www.opensource.org/licenses/mit-license.php)|
+|Adobe UI Design|[Adobe](http://www.adobe.com/products/coldfusion-family.html)|Adobe|
+|Everything Else|[Christopher Wigginton](https://github.com/wiggick/ColdFusion-CFIDE-Administrator-Extensions)|[MIT License](http://www.opensource.org/licenses/mit-license.php)|
